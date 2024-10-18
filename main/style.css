@@ -4,3 +4,62 @@
     --blackblue: #0B192C;
     --black: #000000;
 }
+
+body {
+    background-color: var(--blackblue);
+}
+
+.container {
+    background-color: var(--black);
+    width: 25rem;
+    height: 33rem;
+    margin: calc(50vh - 15rem) auto 0;
+    border-radius: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.screen {
+    background-color: var(--blackblue);
+    width: 90%;
+    height: 3rem;
+    margin: 1.5rem auto;
+    border-radius: 1rem;
+}
+
+.buttons {
+    /* background-color: red; */
+    height: 80%;
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; */
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+button {
+    background-color: var(--blue);
+    border: none;
+    border-radius: 1rem;
+    /* color: #FF6500; */
+    color: aliceblue;
+    height: 3.5rem;
+    width: 3.5rem;
+    margin: auto;
+}
+
+.button-equal {
+    grid-column: 3/5;
+    width: 10rem;
+    /* grid-row: 5/6; */
+}
+
+button:hover {
+    cursor: pointer;
+    scale: 1.2;
+}
