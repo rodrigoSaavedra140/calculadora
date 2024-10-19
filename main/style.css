@@ -13,7 +13,7 @@ body {
 .container {
     background-color: var(--black);
     width: 25rem;
-    height: 33rem;
+    height: 36rem;
     margin: calc(50vh - 15rem) auto 0;
     border-radius: 2rem;
 
@@ -28,12 +28,13 @@ body {
     background-color: var(--blue);
     color: var(--white);
     width: 90%;
-    height: 64px;
-    margin: 1.5rem auto;
+    height: 5rem;
+    margin: 1.5rem auto 1rem;
     border-radius: 1rem;
-    font-size: 40px;
+    font-size: 60px;
     padding-right: 12px;
-    padding-top: 16px;
+    padding-bottom: 6px;
+    font-family: "Calculator", sans-serif;
 }
 
 .buttons {
@@ -47,6 +48,8 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
+    row-gap: 1rem;
+    margin: 1rem;
 }
 
 button {
@@ -55,9 +58,15 @@ button {
     border-radius: 1rem;
     /* color: #FF6500; */
     color: aliceblue;
-    height: 3.5rem;
-    width: 3.5rem;
+    height: 4.5rem;
+    width: 4.5rem;
     margin: auto;
+
+    font-size: 2rem;
+    font-weight: bolder;
+    font-family: "Agdasima", sans-serif;
+    /* font-weight: 900; */
+    font-style: normal;
 }
 
 .button-equal {
@@ -76,4 +85,8 @@ button {
 button:hover {
     cursor: pointer;
     scale: 1.2;
+}
+
+.button-equal:hover {
+    scale: 1.15;
 }
