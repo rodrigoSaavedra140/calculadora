@@ -22,6 +22,7 @@ body {
 }
 
 .screen {
+    color: white;
     background-color: var(--blackblue);
     width: 90%;
     height: 3rem;
