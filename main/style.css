@@ -3,6 +3,7 @@
     --blue: #1E3E62;
     --blackblue: #0B192C;
     --black: #000000;
+    --white: #ffffff;
 }
 
 body {
@@ -22,12 +23,17 @@ body {
 }
 
 .screen {
-    color: white;
-    background-color: var(--blackblue);
+    display: block;
+    text-align: end;
+    background-color: var(--blue);
+    color: var(--white);
     width: 90%;
-    height: 3rem;
+    height: 64px;
     margin: 1.5rem auto;
     border-radius: 1rem;
+    font-size: 40px;
+    padding-right: 12px;
+    padding-top: 16px;
 }
 
 .buttons {
@@ -57,7 +63,14 @@ button {
 .button-equal {
     grid-column: 3/5;
     width: 10rem;
+    background-color: var(--orange);
+    border-color: var(--blackblue);
+    font-size: 36px;
     /* grid-row: 5/6; */
+}
+
+.button-delete {
+    color: red
 }
 
 button:hover {
