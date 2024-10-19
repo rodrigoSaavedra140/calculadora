@@ -14,7 +14,7 @@ body {
     background-color: var(--black);
     width: 25rem;
     height: 36rem;
-    margin: calc(50vh - 15rem) auto 0;
+    margin: calc(50vh - 18rem) auto 0;
     border-radius: 2rem;
 
     display: flex;
@@ -35,6 +35,19 @@ body {
     padding-right: 12px;
     padding-bottom: 6px;
     font-family: "Calculator", sans-serif;
+}
+
+.historial {
+    position: relative;
+    top: 5.2rem;
+    right: 1.4rem;
+    width: 100%;
+    height: 0;
+    /* background-color: red; */
+    font-size: 1rem;
+    font-family: "Calculator", sans-serif;
+    color: rgb(153, 157, 182);
+    text-align: end;
 }
 
 .buttons {
@@ -89,4 +102,8 @@ button:hover {
 
 .button-equal:hover {
     scale: 1.15;
+}
+
+.hide {
+    background-color: transparent;
 }
