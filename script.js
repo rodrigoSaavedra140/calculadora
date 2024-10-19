@@ -1,109 +1,81 @@
 const formula = document.querySelector(".screen");
-// const btns = document.querySelectorAll("button");
-var fr = 0;
-var c = '';
+const hist = document.querySelector(".historial");
 
-const btn1 = document.querySelector(".button-1");
-const btn2 = document.querySelector(".button-2");
-const btn3 = document.querySelector(".button-3");
-const btn4 = document.querySelector(".button-4");
-const btn5 = document.querySelector(".button-5");
-const btn6 = document.querySelector(".button-6");
-const btn7 = document.querySelector(".button-7");
-const btn8 = document.querySelector(".button-8");
-const btn9 = document.querySelector(".button-9");
-const btn0 = document.querySelector(".button-0");
-const btnSum = document.querySelector(".button-sum");
-const btnMinus = document.querySelector(".button-minus");
-const btnTimes = document.querySelector(".button-times");
-const btnDivide = document.querySelector(".button-divide");
 const btnDel = document.querySelector(".button-delete");
 const btnEqual = document.querySelector(".button-equal");
 
-btn1.addEventListener("click", () => {
-    formula.innerText += "1";
+const opButtons = document.querySelectorAll(".operator");   //operator buttons
+const nButtons = document.querySelectorAll(".number");      //number buttons
+const opRegex = /\+|\-|\*|\//;
+
+var aux = "";
+var arr = [];
+
+for (let btn of opButtons){
+    btn.addEventListener("click", () => {
+
+        if (aux === "") {
+            console.log("doble ingreso de operador");
+        } else {
+            formula.innerText += btn.innerText;
+    
+            arr[arr.length] = parseInt(aux);
+            arr[arr.length] = btn.value;
+    
+            aux = "";
+        }
+    })
+}
+
+for (let nBtn of nButtons){
+    nBtn.addEventListener("click", () => {
+        formula.innerText += nBtn.innerText;
+        aux += nBtn.innerText;
+    })
+}
+
+btnEqual.addEventListener("click", () => {  
+    
+    if (aux === "") {
+        console.log("falta otro numero para operar");
+    } else {
+        arr[arr.length] = parseInt(aux);
+        console.log(arr)
+        hist.innerText = arr.toString().replaceAll(",", " ");
+        
+        formula.innerText = equal(arr, arr.length-1);
+        
+        arr = [];
+        aux = parseInt(formula.innerText);
+    }
 })
 
-btn2.addEventListener("click", () => {
-    formula.innerText += "2";
-})
-
-btn3.addEventListener("click", () => {
-    formula.innerText += "3";
-})
-
-btn4.addEventListener("click", () => {
-    formula.innerText += "4";
-})
-
-btn5.addEventListener("click", () => {
-    formula.innerText += "5";
-})
-
-btn6.addEventListener("click", () => {
-    formula.innerText += "6";
-})
-
-btn7.addEventListener("click", () => {
-    formula.innerText += "7";
-})
-
-btn8.addEventListener("click", () => {
-    formula.innerText += "8";
-})
-
-btn9.addEventListener("click", () => {
-    formula.innerText += "9";
-})
-
-btn0.addEventListener("click", () => {
-    formula.innerText += "0";
-})
-
-btnSum.addEventListener("click", () => {
-    fr = parseInt(formula.textContent);
-    formula.innerText = "";
-    c = '+';
-})
-
-btnMinus.addEventListener("click", () => {
-    fr = parseInt(formula.textContent);
-    formula.innerText = "";
-    c = '-';
-})
-
-btnTimes.addEventListener("click", () => {
-    fr = parseInt(formula.textContent);
-    formula.innerText = "";
-    c = '*';
-})
-
-btnDivide.addEventListener("click", () => {
-    fr = parseInt(formula.textContent);
-    formula.innerText = "";
-    c = '/';
-})
+const equal = (arr, i) => {
+    switch (arr[i-1]){
+        case "+":
+            return equal(arr, i-2) + arr[i];
+            break;
+        case "-":
+            return equal(arr, i-2) - arr[i];
+            break;
+        case "*":
+            arr[i-2] *= arr[i];
+            return equal(arr, i-2);
+            break;
+        case "/":
+            arr[i-2] /= arr[i];
+            return equal(arr, i-2);
+            break;
+        default:
+            console.log("termino");
+            return arr[i];
+            break;
+    }
+}
 
 btnDel.addEventListener("click", () => {
     formula.innerText = "";
-    fr = 0;
+    hist.innerText = "";
+    arr = [];
+    aux = "";
 })
-
-btnEqual.addEventListener("click", () => {  
-    // const aux = formula.innerText.split("");
-
-    if (c === '+') {
-        formula.innerText = `${fr + parseInt(formula.textContent)}`;
-        // console.log(aux);
-    }
-    if (c === '-'){
-        formula.innerText = `${fr - parseInt(formula.textContent)}`;
-    }
-    if (c === '*'){
-        formula.innerText = `${fr * parseInt(formula.textContent)}`;
-    }
-    if (c === '/'){
-        formula.innerText = `${fr / parseInt(formula.textContent)}`;
-    }
-})
-
