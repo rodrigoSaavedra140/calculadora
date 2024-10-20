@@ -1,6 +1,7 @@
 const formula = document.querySelector(".screen");
 const hist = document.querySelector(".historial");
 
+const btnCe = document.querySelector(".button-clear");
 const btnDel = document.querySelector(".button-delete");
 const btnEqual = document.querySelector(".button-equal");
 
@@ -77,9 +78,15 @@ const equal = (arr, i) => {
     }
 }
 
-btnDel.addEventListener("click", () => {
+btnCe.addEventListener("click", () => {
     formula.innerText = "";
     hist.innerText = "";
     arr = [];
     aux = "";
 })
+
+btnDel.addEventListener("click", () => {
+    formula.innerText = formula.innerText.slice(0,-1);
+    aux = aux.slice(0,-1);
+})
+
