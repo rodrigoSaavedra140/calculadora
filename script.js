@@ -38,6 +38,10 @@ btnEqual.addEventListener("click", () => {
     
     if (aux === "") {
         console.log("falta otro numero para operar");
+        arr.pop();
+        aux = arr[arr.length -1];
+        formula.innerText = formula.innerText.slice(0,-1);
+        arr.pop();
     } else {
         arr[arr.length] = parseInt(aux);
         console.log(arr)
