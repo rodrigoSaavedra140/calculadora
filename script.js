@@ -7,7 +7,7 @@ const btnEqual = document.querySelector(".button-equal");
 
 const opButtons = document.querySelectorAll(".operator");   //operator buttons
 const nButtons = document.querySelectorAll(".number");      //number buttons
-const opRegex = /\+|\-|\*|\//;
+// const opRegex = /\+|\-|\*|\//;
 
 var aux = "";
 var arr = [];
