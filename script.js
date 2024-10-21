@@ -1,10 +1,19 @@
 const screen = document.querySelector(".screen");
 const hist = document.querySelector(".historial");
-
+var parenthesis = '';
 
 function appendToScreen(input){
     screen.value += input; 
 }
+// function appendToScreenParenthesis() {
+//     if (parenthesis === '(' ){
+//         screen.value += ')'
+//         parenthesis = ')';
+//     }else {
+//         screen.value += '('
+//         parenthesis = '(';
+//     }
+// }
 
 function equal(){
     try {
