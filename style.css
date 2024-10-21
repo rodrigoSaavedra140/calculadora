@@ -10,7 +10,7 @@ body {
     background-color: var(--blackblue);
 }
 
-.container {
+.calculator {
     background-color: var(--black);
     width: 25rem;
     height: 36rem;

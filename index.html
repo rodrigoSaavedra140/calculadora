@@ -15,32 +15,33 @@
 </head>
 <body>
     <!-- <h1>Calculator</h1> -->
-    <div class="container">
+    <div class="calculator">
         <div class="historial"></div>
-        <div class="screen" placeholder=""></div>
+        <input class="screen" type="text" readonly>
         <div class="buttons">
-            <button class="button-clear">CE</button>
-            <button class="button-delete">⇦</button>
+            <button class="button-clear" onclick="clearScreen()">CE</button>
+            <button class="button-delete" onclick="delScreen()">⇦</button>
             <button class="hide"></button>
-            <button value="/" class="operator">/</button>
-            <button class="number">7</button>
-            <button class="number">8</button>
-            <button class="number">9</button>
-            <button value="*" class="operator">*</button>
-            <button class="number">4</button>
-            <button class="number">5</button>
-            <button class="number">6</button>
-            <button value="-" class="operator">-</button>
-            <button class="number">1</button>
-            <button class="number">2</button>
-            <button class="number">3</button>
-            <button value="+" class="operator">+</button>
-            <button class="hide"></button>
-            <button class="number">0</button>
+            <button class="operator" onclick="appendToScreen('/')">/</button>
+            <button class="number" onclick="appendToScreen('7')">7</button>
+            <button class="number" onclick="appendToScreen('8')">8</button>
+            <button class="number" onclick="appendToScreen('9')">9</button>
+            <button class="operator"  onclick="appendToScreen('*')">*</button>
+            <button class="number" onclick="appendToScreen('4')">4</button>
+            <button class="number" onclick="appendToScreen('5')">5</button>
+            <button class="number" onclick="appendToScreen('6')">6</button>
+            <button class="operator" onclick="appendToScreen('-')">-</button>
+            <button class="number" onclick="appendToScreen('1')">1</button>
+            <button class="number" onclick="appendToScreen('2')">2</button>
+            <button class="number" onclick="appendToScreen('3')">3</button>
+            <button class="operator" onclick="appendToScreen('+')">+</button>
+            <button class="number" onclick="appendToScreen('0')">0</button>
+            <button class="number" onclick="apprendToScreen('.')">.</button>
             
-            <button class="button-equal">=</button>
+            
+            <button class="button-equal"  onclick="equal()">=</button>
         </div>
     </div>
-    <script type="module" src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
