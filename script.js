@@ -19,6 +19,7 @@ function appendToScreenParenthesis() {
 }
 
 function equal(){
+    console.log(screen.value[screen.value.length -1]);
     if(isNaN(screen.value[-1]) && (screen.value[-1] !== ')')){
         delScreen();
     }
