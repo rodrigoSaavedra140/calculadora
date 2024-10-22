@@ -43,7 +43,6 @@ body {
     right: 1.4rem;
     width: 100%;
     height: 0;
-    /* background-color: red; */
     font-size: 1rem;
     font-family: "Calculator", sans-serif;
     color: rgb(153, 157, 182);
@@ -51,13 +50,7 @@ body {
 }
 
 .buttons {
-    /* background-color: red; */
     height: 80%;
-    /* display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center; */
-
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
@@ -69,7 +62,6 @@ button {
     background-color: var(--blue);
     border: none;
     border-radius: 1rem;
-    /* color: #FF6500; */
     color: aliceblue;
     height: 4.5rem;
     width: 4.5rem;
@@ -78,7 +70,6 @@ button {
     font-size: 2rem;
     font-weight: bolder;
     font-family: "Agdasima", sans-serif;
-    /* font-weight: 900; */
     font-style: normal;
 }
 
@@ -87,7 +78,6 @@ button {
     width: 10rem;
     background-color: var(--orange);
     font-size: 36px;
-    /* grid-row: 5/6; */
 }
 
 .button-clear {
