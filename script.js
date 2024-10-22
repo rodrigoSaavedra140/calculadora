@@ -3,25 +3,38 @@ const hist = document.querySelector(".historial");
 var parenthesis = '';
 
 function appendToScreen(input){
-    screen.value += input; 
-}
-function appendToScreenParenthesis() {
-    if (parenthesis === '(' ){
-        screen.value += ')'
-        parenthesis = ')';
-    }else {
-        if(isNaN(screen.value[-1])){
-            screen.value += '*';
+    if(isNaN(screen.value[screen.value.length -1]) && (isNaN(input)) && (input !== '-')){
+        if(screen.value[screen.value.length -1] === '('){
+            delScreen();
+            parenthesis = '';
         }
-        screen.value += '('
-        parenthesis = '(';
+        delScreen();
     }
+    if(input === 'p'){
+        if (parenthesis === '(' ){
+            screen.value += ')';
+            parenthesis = ')';
+        }else {
+            if(isNaN(screen.value[-1])){
+                screen.value += '*';
+            }
+            screen.value += '('
+            parenthesis = '(';
+        }
+    }else{
+        screen.value += input; 
+    }
+    
 }
 
 function equal(){
-    console.log(screen.value[screen.value.length -1]);
-    if(isNaN(screen.value[-1]) && (screen.value[-1] !== ')')){
+    
+    if(isNaN(screen.value[screen.value.length -1]) && (screen.value[screen.value.length -1] !== ')')){
         delScreen();
+    }
+    if (parenthesis === '('){
+        screen.value += ')';
+        parenthesis = ''; 
     }
     hist.innerText = screen.value;
     screen.value = eval(screen.value);
