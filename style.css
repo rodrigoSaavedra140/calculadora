@@ -86,7 +86,6 @@ button {
     grid-column: 3/5;
     width: 10rem;
     background-color: var(--orange);
-    border-color: var(--blackblue);
     font-size: 36px;
     /* grid-row: 5/6; */
 }
