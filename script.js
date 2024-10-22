@@ -9,7 +9,7 @@ function appendToScreen(input){
     if((screen.value === "Infinity")){
         clearScreen();
     }
-    if(isNaN(screen.value[screen.value.length -1]) && (isNaN(input)) && (input !== 'p')){
+    if(isNaN(screen.value[screen.value.length -1]) && (isNaN(input)) && (input !== 'p') && (input !== '-' || (screen.value[screen.value.length -1]=== '-'))){
         if(screen.value[screen.value.length -1] === '('){
             delScreen();
             parenthesis = '';
