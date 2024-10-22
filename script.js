@@ -9,7 +9,7 @@ function appendToScreen(input){
     if((screen.value === "Infinity")){
         clearScreen();
     }
-    if(isNaN(screen.value[screen.value.length -1]) && (isNaN(input)) && (input !== '-')){
+    if(isNaN(screen.value[screen.value.length -1]) && (isNaN(input)) && (input !== 'p')){
         if(screen.value[screen.value.length -1] === '('){
             delScreen();
             parenthesis = '';
@@ -22,7 +22,7 @@ function appendToScreen(input){
             screen.value += ')';
             parenthesis = ')';
         }else {
-            if(isNaN(screen.value[-1])){
+            if(!isNaN(screen.value[screen.value.length -1])){
                 screen.value += '*';
             }
             screen.value += '('
@@ -52,6 +52,7 @@ function equal(){
 function clearScreen() {
     screen.value = "";
     hist.innerText = "";
+    parenthesis = '';
 }
 // limpia solo el ultimo caracter del input
 function delScreen (){
