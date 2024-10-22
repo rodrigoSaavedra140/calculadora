@@ -5,6 +5,10 @@ var parenthesis = '';
 //funcion que agrega al final del input el caracter selecionado
 function appendToScreen(input){
     //verifica si el string ya tiene un operador o signo que no sea un numero y los borra
+    console.log(screen.value)
+    if((screen.value === "Infinity")){
+        clearScreen();
+    }
     if(isNaN(screen.value[screen.value.length -1]) && (isNaN(input)) && (input !== '-')){
         if(screen.value[screen.value.length -1] === '('){
             delScreen();
