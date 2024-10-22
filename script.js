@@ -5,15 +5,19 @@ var parenthesis = '';
 function appendToScreen(input){
     screen.value += input; 
 }
-// function appendToScreenParenthesis() {
-//     if (parenthesis === '(' ){
-//         screen.value += ')'
-//         parenthesis = ')';
-//     }else {
-//         screen.value += '('
-//         parenthesis = '(';
-//     }
-// }
+function appendToScreenParenthesis() {
+    if (parenthesis === '(' ){
+        screen.value += ')'
+        parenthesis = ')';
+    }else {
+        if(isNaN(screen.value[-1])){
+            screen.value += '*';
+        }
+        console.log(isNaN(screen.value[-1]));
+        screen.value += '('
+        parenthesis = '(';
+    }
+}
 
 function equal(){
     try {
