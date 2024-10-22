@@ -13,21 +13,24 @@ function appendToScreenParenthesis() {
         if(isNaN(screen.value[-1])){
             screen.value += '*';
         }
-        console.log(isNaN(screen.value[-1]));
         screen.value += '('
         parenthesis = '(';
     }
 }
 
 function equal(){
-    try {
-        hist.innerText = screen.value;
-        screen.value = eval(screen.value);
+    if(isNaN(screen.value[-1]) && (screen.value[-1] !== ')')){
+        delScreen();
     }
-    catch(error){
-        screen.value = "Error";
-        hist.innerText = "";
-    }
+
+
+    hist.innerText = screen.value;
+    screen.value = eval(screen.value);
+    
+    // catch(error){
+    //     screen.value = "Error";
+    //     hist.innerText = "";
+    // }
 }
 
 function clearScreen() {
